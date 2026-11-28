@@ -1,0 +1,10 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my-quasar-frontend:latest
+    container_name: my-quasar-frontend-container
+    ports:
+      - "${HOST_PORT:-8080}:80"
+    restart: unless-stopped
